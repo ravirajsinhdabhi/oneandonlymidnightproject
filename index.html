@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+  </head>
+  <style>
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.active {
+  margin-left: 100px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  /* font-weight: bold; */
+  /* padding-top: 22px; */
+  /* margin-top: 5px; */
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.bg {
+  width: 90%;
+  height: 500px;
+  background-image: url("https://visionone.co.uk/app/uploads/Lounge-Idea-Page-1600x800.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 40px;
+  filter: brightness(0.7);
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* about us */
+.about {
+  max-width: 1200px;
+  display: grid;
+}
+@media (min-width: 600px) {
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1700px) {
+  .about {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.about-img {
+  filter: brightness(1.8);
+  filter: drop-shadow(1.4);
+  filter: contrast(1.4);
+  filter: saturate(2.1);
+  border-radius: 30px;
+}
+.about-text h1 {
+  color: rgba(0, 0, 0, 0.945);
+  font-weight: 200;
+}
+.about-text h4 {
+  color: rgba(0, 0, 0, 0.986);
+  font-weight: 600;
+}
+.about-text p {
+  color: rgba(0, 0, 0, 0.829);
+  font-weight: 170;
+}
+
+/* amnities start */
+.container {
+  max-width: 1320px;
+  width: 100%;
+  /* height: 80%; */
+  height: 470px;
+  background-color: rgba(255, 218, 185, 0.274);
+}
+
+.slider-wrapper {
+  position: relative;
+}
+.slider-wrapper .slide-button {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  z-index: 5;
+  color: black;
+  display: flex;
+  cursor: pointer;
+  font-size: 2.2rem;
+  background: rgba(255, 218, 185, 0.642);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.slider-wrapper .slide-button:hover {
+  background: #404040;
+}
+.slider-wrapper .slide-button#prev-slide {
+  left: 25px;
+  display: none;
+}
+.slider-wrapper .slide-button#next-slide {
+  right: -25px;
+}
+.slider-wrapper .image-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 18px;
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.slider-wrapper .image-list::-webkit-scrollbar {
+  display: none;
+}
+.slider-wrapper .image-list .image-item {
+  height: 300px;
+  width: 230px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.slider-scrollbar .scrollbar-track {
+  background: #ccc;
+  width: 100%;
+  /* height: 2px; */
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+}
+.slider-scrollbar:hover .scrollbar-track {
+  height: 4px;
+}
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  background: peachpuff;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  cursor: grab;
+  border-radius: inherit;
+}
+.slider-scrollbar .scrollbar-thumb:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 1023px) {
+  .slider-wrapper .slide-button {
+    display: none !important;
+  }
+  .slider-wrapper .image-list {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory;
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
+  }
+}
+/* end amnit */
+
+/* connetivity start */
+connectivity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.responsive1 {
+  width: 90%;
+  max-width: 500px;
+  height: 500px;
+  float: left;
+  padding: 0 2rem;
+}
+
+.connectivity-text h1 {
+  color: rgba(0, 0, 0, 0.863);
+  font-weight: 100;
+}
+.connectivity-text h4 {
+  color: rgba(0, 0, 0, 0.596);
+  font-weight: 590;
+}
+.connectivity-text p {
+  color: rgba(0, 0, 0, 0.829);
+  font-weight: 170;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+table td {
+  font-size: smaller;
+}
+
+/* gallery start  */
+.slider-wrapper .image-list1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 18px;
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.Gallery1 {
+  color: rgba(0, 0, 0, 0.945);
+  font-weight: 200;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  font-size: smaller;
+}
+.Gallery1 h1 {
+  color: #000000b4;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+.Gallery1 h4 {
+  color: #00000096;
+}
+.Gallery1 p {
+  color: #000000;
+}
+.slider-wrapper .image-list1::-webkit-scrollbar {
+  display: none;
+}
+.slider-wrapper .image-list1 .image-item {
+  height: 350px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* unitplan start */
+.unit {
+  background-color: rgba(255, 228, 196, 0.404);
+}
+.unit h1 {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+.unit h4 {
+  color: #00000083;
+  font-family: sans-serif;
+  font-size: smaller;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 25.3333%;
+  }
+}
+
+.card {
+  /* background-color: white; */
+  background-image: url(https://www.squareyards.com/blog/wp-content/uploads/2023/12/Vastu-Guidelines-for-Optimal-2-BHK-House-Plan.jpg);
+  background-size: cover;
+  border-radius: 1.4rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+}
+
+.card_content {
+  padding: 7rem;
+  background-color: rgba(255, 218, 185, 0.76);
+}
+/* unitend */
+
+/* sepecification start*/
+
+.Specification h1 {
+  color: #000000c7;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.images {
+  display: flex;
+}
+
+img {
+  margin: 5px;
+}
+
+.overview-img {
+  filter: brightness(0.7);
+}
+.overview {
+  position: relative;
+  color: white;
+}
+.top-left {
+  position: absolute;
+  top: 168px;
+  left: 70px;
+}
+
+/* footer start */
+.footer {
+  /* top: 50%; */
+  /* left: 50%; */
+  max-width: 1330px;
+  width: 100%;
+  background: peachpuff;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  /* padding: 10px; */
+}
+
+.footer-row .footer-col h4 {
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.footer-col .links {
+  margin-top: 20px;
+}
+.footer-col .links li {
+  list-style: none;
+  /* margin-bottom: 10px; */
+}
+.footer-col .links li a {
+  text-decoration: none;
+  color: #000000;
+}
+.footer-col .links li a:hover {
+  color: #000000;
+}
+.footer-col p {
+  margin: 20px 0;
+  color: #000000;
+  max-width: 300px;
+}
+.footer-col .icons {
+  display: flex;
+  margin-top: 30px;
+  gap: 30px;
+  cursor: pointer;
+}
+.footer-col .icons i {
+  color: #000000;
+}
+.footer-col .icons i:hover {
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 95%;
+    border-radius: 0;
+  }
+  .footer .footer-row {
+    padding: 20px;
+    gap: 1rem;
+  }
+}
+/* foooter ends */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 50px;
+  margin: 0 auto;
+  max-width: 100%;
+
+  position: relative;
+  padding-left: 180px;
+}
+@media (max-width: 1024px) {
+  .div {
+    padding-left: 20px;
+  }
+}
+
+
+  </style>
+  <body>
+    <!-- navbar start -->
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active" style="font-size: 25px; margin-right: 50px"
+        >One & Only</a
+      >
+
+      <a href="#bg">Overview</a>
+      <a href="#ameneties-img">Amenties</a>
+      <a href="#connectivity">Connectivity</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#unit">Plans</a>
+      <a href="#Specification">Specification</a>
+      <a href="#aboutthedev">About the Developer</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <!-- navbar end --><!-- navbar start -->
+
+    <!-- image -->
+    <div class="bg" id="bg">
+      <h1 style="color: white; padding-top: 190px; padding-left: 80px">
+        Your Jounrney to Luxury
+      </h1>
+      <h1 style="color: white; padding-left: 80px">Begins Here</h1>
+      <p style="color: white; padding-left: 80px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+      </p>
+    </div>
+    <!-- end img -->
+    <br />
+    <br /><br />&nbsp;
+
+    <!-- About start -->
+    <div class="about">
+      <center>
+        <img
+          class="about-img"
+          src="https://images.squarespace-cdn.com/content/v1/625a300c09ad480adbaecd81/5a545e10-8f01-4308-8494-f855120cc4a4/unsplash-image-XbwHrt87mQ0.jpg?format=1500w"
+          height="370"
+          width="270"
+          alt=""
+        />
+      </center>
+      <div class="about-text">
+        <h1>ABOUT US</h1>
+        <h4>
+          Lorem ipsum dolor sit amet consectetur. Vivamus id pretium <br />
+          vestibulum rhoncus egestas.
+        </h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+          sagittis <br />
+          lorem nisl. Varius turpis in sit diam mauris diam.
+        </p>
+        <p>
+          Hac egestas faucibus tempus elit ipsum erat posuere. Arcu nunc tellus
+          nibh tellus porta integer risus. Tortor nec eu id tristique
+          scelerisque iaculis ultrices odio neque.
+        </p>
+        <p>Quis tristique nisi nibh ac nulla feugiat nulla sit.</p>
+        <p>Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.</p>
+      </div></div> <br><br>
+      <!-- About end -->
+
+      <!-- Amenities start -->
+      <div class="container" >
+        <div class="ameneties-img" id="ameneties-img">
+            <img src="https://www.rtfj.co.uk/wp-content/themes/rtfj/img/leaves/leaves-2.png" height="150px" width="150px" alt="" style="position: absolute;">
+        <div class="ameneties-text" style="text-align: center; padding-top: 10px; ">
+            <h1 style="font-weight: 40; ">AMENITIES</h1>
+            <h4 style="font-weight: 100;">Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus egestas.</h4>
+            <p>Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius turpis in sit diam mauris diam. <br>
+                Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.
+            </p>
+        </div><br><br><br>
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <ul class="image-list">
+              <img class="image-item" src="https://qph.cf2.quoracdn.net/main-qimg-e39c8a5e7375dda3010c7632cd6c87ed" alt="img-1" />
+              <img class="image-item" src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/7/2016/10/24102016_StRegisInifinityPool01.jpg" alt="img-2" />
+            <img class="image-item" src="https://images.unsplash.com/photo-1631512700356-574da7748a44?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img-3" />
+            <img class="image-item" src="https://rackupmoments.com/wp-content/uploads/2020/03/benefits-of-walking03-1.jpg" alt="img-4" />
+            <img class="image-item" src="https://qph.cf2.quoracdn.net/main-qimg-e39c8a5e7375dda3010c7632cd6c87ed" alt="img-1" />
+            <img class="image-item" src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/7/2016/10/24102016_StRegisInifinityPool01.jpg" alt="img-2" />
+            <img class="image-item" src="https://images.unsplash.com/photo-1631512700356-574da7748a44?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img-3" />
+            <img class="image-item" src="https://rackupmoments.com/wp-content/uploads/2020/03/benefits-of-walking03-1.jpg" alt="img-4" />
+          </ul>
+          <!-- <div><img style="float: right; padding-bottom: 150px; position: relative;" src="https://img.freepik.com/premium-vector/branch-artificial-cotton-flower-background-with-place-words-can-be-used-as-invitation_515275-896.jpg?w=740" height="100px" width="100px" alt="" ></div> -->
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+        </div>
+        </div>
+        <!-- <img style="float: right; padding-bottom: 150px;" src="https://img.freepik.com/premium-vector/branch-artificial-cotton-flower-background-with-place-words-can-be-used-as-invitation_515275-896.jpg?w=740" height="100px" width="100px" alt="" > -->
+    </div>
+<!-- ameneties end -->
+
+
+    <!--Connectivity start-->
+    <div class="connectivity" id="connectivity">
+      <!-- <img src="https://images.squarespace-cdn.com/content/v1/65122cbf317ae73f9cb004d8/c9ae0a19-6ea5-4338-b5fc-375ab4e0262f/branch7.png?format=1500w" height="100px" width="100px" alt=""> -->
+      <!-- <img src="https://i0.wp.com/godrejgurgaon89.com/wp-content/uploads/2024/03/map2.png?w=775&ssl=1" height="500px" width="500px" alt=""> -->
+      <!-- <img src="https://statos.com.sg/wp-content/themes/statos/assets/images/1.0_Landing/Hero_leaf_graphics/landing-leaf1-top2.png" height="100px" width="100px" alt=""> -->
+      <img src="https://propertyingurugram.in/wp-content/uploads/2024/03/Ganga-Realty-Sector-85-Gurgaon-Location-map-1024x704.jpg" alt="Nature" class="responsive1" width="600" height="400">
+      <div class="connectivity-text" >
+          <h1 style="color: rgba(0, 0, 0, 0.945);
+          font-weight: 200; font-family: Montserrat, sans-serif;">CONNECTIVITY</h1>
+          <h4 style="font-size: smaller;">Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus egestas.</h4>
+          <p style="font-size: smaller;">Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius turpis in sit <br>
+              diam mauris diam.</p><br><br><br>
+              <div style="overflow-x: auto;">
+                  <table >
+                    <tr>
+                      <th><svg style="height: 50px; width: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M232 0c-39.8 0-72 32.2-72 72v8H72C32.2 80 0 112.2 0 152V440c0 39.8 32.2 72 72 72h.2 .2 .2 .2 .2H73h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2H75h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2H77h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2H79h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2H82h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2H85h.2 .2 .2 .2H86h.2 .2 .2 .2H87h.2 .2 .2 .2H88h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2H98h.2 .2 .2 .2H99h.2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2 .2v0H456h8v0H568c39.8 0 72-32.2 72-72V152c0-39.8-32.2-72-72-72H480V72c0-39.8-32.2-72-72-72H232zM480 128h88c13.3 0 24 10.7 24 24v40H536c-13.3 0-24 10.7-24 24s10.7 24 24 24h56v48H536c-13.3 0-24 10.7-24 24s10.7 24 24 24h56V440c0 13.3-10.7 24-24 24H480V336 128zM72 128h88V464h-.1-.2-.2-.2H159h-.2-.2-.2H158h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H154h-.2-.2-.2H153h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H150h-.2-.2-.2H149h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H146h-.2-.2-.2H145h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H142h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H139h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H136h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H133h-.2-.2-.2-.2-.2-.2-.2-.2H131h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H128h-.2-.2-.2-.2-.2-.2-.2-.2H126h-.2-.2-.2-.2-.2-.2-.2-.2H124h-.2-.2-.2-.2-.2-.2-.2-.2H122h-.2-.2-.2-.2-.2-.2-.2-.2H120h-.2-.2-.2-.2-.2-.2-.2-.2H118h-.2-.2-.2-.2-.2-.2-.2-.2H116h-.2-.2-.2-.2-.2-.2-.2-.2H114h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H111h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H108h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H105h-.2-.2-.2-.2H104h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H100h-.2-.2-.2-.2H99h-.2-.2-.2-.2H98h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H88h-.2-.2-.2-.2H87h-.2-.2-.2-.2H86h-.2-.2-.2-.2H85h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H82h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H79h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H77h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H75h-.2-.2-.2-.2-.2-.2-.2-.2-.2-.2H73h-.2-.2-.2-.2-.2H72c-13.2 0-24-10.7-24-24V336h56c13.3 0 24-10.7 24-24s-10.7-24-24-24H48V240h56c13.3 0 24-10.7 24-24s-10.7-24-24-24H48V152c0-13.3 10.7-24 24-24zM208 72c0-13.3 10.7-24 24-24H408c13.3 0 24 10.7 24 24V336 464H368V400c0-26.5-21.5-48-48-48s-48 21.5-48 48v64H208V72zm88 24v24H272c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h24v24c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16V168h24c8.8 0 16-7.2 16-16V136c0-8.8-7.2-16-16-16H344V96c0-8.8-7.2-16-16-16H312c-8.8 0-16 7.2-16 16z"/></svg><br> hospital</th>
+                      <th  style="padding-top: 60px;">Education</th>
+                    </tr>
+                    <tr>
+                      <td>Cadence Research & Consulting</td>
+                      <td>5.2km</td>
+                      <td>Cadence Research & Consulting</td>
+                      <td>6.2km</td>
+                    </tr>
+                    <tr>
+                      <td>Community Health Service </td>
+                      <td>2.3 Km</td>
+                      <td>Community Health Service </td>
+                      <td>3.3 Km</td>
+                    </tr>
+                    <tr>
+                      <td>Above n Beyond Medical </td>
+                      <td>1.9 Km</td>
+                      <td>Above n Beyond Medical </td>
+                      <td>2.2 Km</td>
+                    </tr>
+                  </table>
+                
+              <button><i class="fa fa-arrow-left" aria-hidden="true"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div> 
+          </div> 
+          </div>
+ <!--  -->
+          <!-- gallery start -->
+     
+<br><br><br><br><br><br><br><br>
+
+      <div class="container" style="background-color: rgba(255, 255, 255, 0.207);">
+        <div class="gallery" id="gallery">
+            <img src="https://www.rtfj.co.uk/wp-content/themes/rtfj/img/leaves/leaves-2.png" height="150px" width="150px" alt="" style="position: absolute;">
+        <div class="Gallery1" >
+            <h1>GALLERY</h1>
+            <h4>Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus egestas.</h4>
+            <p>Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius turpis in sit diam mauris diam.
+            </p>
+        </div><br><br><br>
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <ul class="image-list1">
+              <img class="image-item img1" src="https://image.architonic.com/pro2-2/20227139/walls-by-patel-3-dd122828-pro-b-arcit18.jpg" alt="img-1" />
+              <img style="margin-top: 50px;" class="image-item" src="https://images.ctfassets.net/6rqe4bgsojj5/63aphMwbF9wCi68oM9Yhke/367a185155dca6bf4b0f3d63b65db6ea/Roofstock_Property_Management_Hero.jpg?w=750&q=75&fm=webp" alt="img-2" />
+            <img class="image-item" src="https://i.pinimg.com/736x/e3/42/4c/e3424c47ff2484e27dc57821415c90b2.jpg" alt="img-3" />
+           
+            <img style="margin-top: 50px;" class="image-item" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQEzZyKa13NhixeNv_lWPEvFRmnRql04WqmXORBqlSAhWYUyG-F" alt="img-1" />
+            <img class="image-item" src="https://lunchbox.imgix.net/featured/elsternwick-house/elsternwick-house-2.jpg?ixlib=php-3.3.0&s=62e22e4c89946846e8d2306ef80bc03b" alt="img-2" />
+            <img style="margin-top: 50px;" class="image-item img1" src="https://image.architonic.com/pro2-2/20227139/walls-by-patel-3-dd122828-pro-b-arcit18.jpg" alt="img-1" />
+            <!-- <img style="margin-top: 50px;" class="image-item" src="https://image.architonic.com/pro2-2/20227139/walls-by-patel-3-dd122828-pro-b-arcit18.jpg" alt="img-1" /> -->
+            <!-- <img class="image-item" src="https://images.ctfassets.net/6rqe4bgsojj5/63aphMwbF9wCi68oM9Yhke/367a185155dca6bf4b0f3d63b65db6ea/Roofstock_Property_Management_Hero.jpg?w=750&q=75&fm=webp" alt="img-2" />
+          <img class="image-item" src="https://i.pinimg.com/736x/e3/42/4c/e3424c47ff2484e27dc57821415c90b2.jpg" alt="img-3" /> -->
+          </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+        </div>
+        </div>
+    </div></div>
+      <!-- end -->
+      <br><br><br><br><br><br><br><br><br><br><br>
+
+      <!-- unit plans start -->
+      <div class="unit" id="unit" style=" padding-left: 10%; padding-top: 40px; ">
+        <div class="unit-text" style="font-size: smaller; color: #0000008d;">
+        <h1>UNIT PLANS</h1>
+        <h4>Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus egestas.</h4>
+        <p>Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius turpis in sit 
+        <br>diam mauris diam.</p>
+    </div>
+    <ul class="cards">
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image"></div>
+            <div class="card_content">
+             
+                <button class="btn card_btn" style="border-radius: 10px; padding: 10px; border: none; width: 100px;">Enquiry now</button>
+            </div>
+        </div>
+    </li>
+    <li class="cards_item">
+        <div class="card">
+            <div class="card_image"></div>
+            <div class="card_content">
+                
+                <button class="btn card_btn" style="border-radius: 10px; padding: 10px; border: none; width: 100px;">Enquiry now</button>
+            </div>
+        </div>
+    </li>
+    <li class="cards_item">
+        <div class="card">
+            <div class="card_image"></div>
+            <div class="card_content">
+                
+                <button class="btn card_btn" style="border-radius: 10px; padding: 10px; border: none; width: 100px;">Enquiry now</button>
+            </div>
+        </div>
+    </li>
+    </div>
+      <!--unitend-->
+      <!-- specification start -->
+      <BR><BR><BR><BR><BR>
+      <div class="Specification" id="Specification" style="text-align: center; padding-top: 50px;" >
+        <h1>SPECIFICATION</h1>
+        <P style="color: #000000c7;">Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus egestas.</P>
+        <P style="color: #000000a1;">Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius turpis in sit diam mauris diam.</P>
+        
+        <div ><img src="c:\Users\LENOVO\Downloads\dress-for-success-what-to-wear-for-your-interview-1597396804.webp" height="180" width="300" style="border-radius: 20px;" />
+          <img class="sp" src="c:\Users\LENOVO\Downloads\LaptopInBed-850x340.jpg" height="220px" width="400px" style="border-radius: 20px; position: relative;"   />
+          <img src="c:\Users\LENOVO\Downloads\christian-mackie-euBmypOZUZA-unsplash.jpg" height="180" width="300" style="border-radius: 20px;"/>
+        </div>
+      </div>
+
+<br><br><br><br>
+         <!--end -->
+
+
+         <!-- about the developer -->
+         <div class="grid-container" id="aboutthedev" style="padding: 0 2rem; padding-top: 30px; padding-bottom: 30px; ">
+          <div>
+              <h1 style=" color: rgba(0, 0, 0, 0.863);
+              font-weight: 100; font-family: Montserrat, sans-serif;">ABOUT THE DEVELOPER</h1>
+              <small>Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum rhoncus <br>
+                  egestas. Vivamus id pretium vestibulum rhoncus egestas</small><br><br>
+              <small> Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis lorem nisl. Varius
+                  <br>
+                  turpis in sit diam mauris diam</small><br><br>
+              <small>Hac egestas faucibus tempus elit ipsum erat posuere. Arcu nunc tellus nibh tellus porta <br>
+                  integer risus. Tortor nec eu id tristique scelerisque iaculis ultrices odio
+                  neque.</small><br><br>
+              <small>Quis tristique nisi nibh ac nulla feugiat nulla sit</small><br>
+              <small>Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.</small>
+          </div>
+
+
+          <div>
+         
+              <img style="border-radius: 30px;"
+                  src="https://img.freepik.com/premium-photo/house-hand-go-green-concept_677805-2089.jpg"
+                  height="270px" width="380px" alt="">
+          </div>
+      </div>
+
+              <!-- end -->
+
+       <!-- FOOTER START -->
+       <section class="footer" >
+        <div class="footer-row1" style="color: white;">
+            <h1 style="color: rgba(0, 0, 0, 0.86); font-size: 2rem; font-family: Montserrat, sans-serif; padding-left: 40px; font-weight: 100; padding-top: 20px;">One & Only</h1>
+        </div>
+        <div class="footer-row">
+            <div class="footer-col">
+                <ul class="links">
+                    <h4>Site address</h4>
+                    <li><a href="#"><small>Imagine your own oasis overflowing with luxury <br>
+                            and natural beauty Crystal clear water</small></a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul class="links">
+                    <h4>Contact us</h4>
+                    <li><a href="#"><small>000000000 <br>
+                        
+                        example@gmail.com</small> </a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <ul class="links">
+                    <h4>Maha rera no</h4>
+                    <li><a href="#"><small>P51800033931
+                            <br>
+                            https://maharerait.mahaonline.gov.in</small> </a></li>
+                        </ul>
+            </div>
+            <div class="footer-col " style="display: flex;">
+                <div class="icons">
+                  
+                </div>
+            </div>
+        </div>
+        <div class="footer-row" >
+            <ul class="link" style="list-style-type: none;">
+                <h4>Disclaimer</h4>
+                <li>
+                    <small>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+                    of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                    a Latin
+                    professor at Hampden Sydney College in Virginia, looked up one of the more obscure Latin
+                    words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                    classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
+                    1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by
+                    Cicero,
+                    written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
+                    Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet..", comes from a line
+                    in section
+                    1.10.32
+                </small>
+                </li>
+            </ul>
+            <footer>
+                <hr />
+                privacy policy
+            </footer>
+        </div>
+    </section>
+    <!-- footer ends -->
+
+       <!--  -->
+  </body>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+
+    const initSlider = () => {
+    const imageList = document.querySelector(".slider-wrapper .image-list");
+    const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+    const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+    const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+    const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+    
+    scrollbarThumb.addEventListener("mousedown"), (e) => {
+        const startX = e.clientX;
+        const thumbPosition = scrollbarThumb.offsetLeft;
+        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+    }}
+        // Update thumb position on mouse move
+        const handleMouseMove = (e) => {
+            const deltaX = e.clientX - startX;
+            const newThumbPosition = thumbPosition + deltaX;
+            // Ensure the scrollbar thumb stays within bounds
+            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+            
+            scrollbarThumb.style.left = $;{boundedPosition}px;
+            imageList.scrollLeft = scrollPosition;
+        }
+        // Remove event listeners on mouse up
+        const handleMouseUp = () => {
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        }
+        // Add event listeners for drag interaction
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+  
+    // Slide images according to the slide button clicks
+    slideButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const direction = button.id === "prev-slide" ? -1 : 1;
+            const scrollAmount = imageList.clientWidth * direction;
+            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+    });
+     // Show or hide slide buttons based on scroll position
+    const handleSlideButtons = () => {
+        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+    }
+    // Update scrollbar thumb position based on image scroll//
+    const updateScrollThumbPosition = () => {
+        const scrollPosition = imageList.scrollLeft;
+        const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+        scrollbarThumb.style.left = $;{thumbPosition}px;
+    }
+    // Call these two functions when image list scrolls//
+    imageList.addEventListener("scroll", () => {
+        updateScrollThumbPosition();
+        handleSlideButtons();
+    });
+
+window.addEventListener("resize", initSlider);
+window.addEventListener("load", initSlider);
+
+    
+
+
+
+  </script>
+</html>
